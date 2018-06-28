@@ -9,8 +9,8 @@ import {
   View,
 } from 'react-native';
 //import { ExpoLinksView } from '@expo/samples';
-import { Constants, MapView, Location, Permissions } from 'expo';
-import { Marker } from 'react-native-maps';
+import { Constants, MapView, Marker, Location, Permissions } from 'expo';
+//import { Marker } from 'react-native-maps';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -21,16 +21,16 @@ export default class LinksScreen extends React.Component {
         key: 1,
         title: 'Cowabunga Bay',
         coordinates: {
-          latitude: 40.53058074589570,
-          longitude: -111.89419525987365
+          latitude: 40.533030,
+          longitude: -111.889966
         },
       },
       {
         key: 2,
-        title: 'Leatherheads',
+        title: 'Aquarium',
         coordinates: {
-          latitude: 40.5305807458957,
-          longitude: -111.89419525987360
+          latitude: 40.532201,
+          longitude: -111.893979
         },  
       }],
     mapRegion: null,
@@ -39,7 +39,6 @@ export default class LinksScreen extends React.Component {
 
   _handleMapRegionChange = mapRegion => {
     this.setState({ mapRegion });
-    this.forceUpdate();
   };
 
   componentDidMount() {
@@ -85,7 +84,7 @@ let location = await Location.getCurrentPositionAsync({});
               <MapView.Marker
                 pinColor={'#d62424'}
                 key={marker.key}
-                coordinate={marker.coordinates}
+                coordinate={{latitude: marker.coordinates.latitude, longitude: marker.coordinates.longitude}}
                 title={marker.title}
               />
             ))
