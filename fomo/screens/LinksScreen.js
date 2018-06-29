@@ -9,8 +9,13 @@ import {
   View,
 } from 'react-native';
 //import { ExpoLinksView } from '@expo/samples';
-import { Constants, MapView, Marker, Location, Permissions } from 'expo';
-//import { Marker } from 'react-native-maps';
+import { 
+  Constants,
+  MapView, 
+  Marker, 
+  Location, 
+  Permissions 
+} from 'expo';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
